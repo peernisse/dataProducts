@@ -1,0 +1,82 @@
+---
+title: "Fancy Presentation"
+author: "Peter E"
+date: "May 1, 2020"
+output: ioslides_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## New Slide
+Some content
+
+***
+Some content but without title. Sometimes useful
+
+## Main Title
+### First level subheading
+#### Second level subheading
+
+## Bullets and Lists
+- Bullet one
+- Bullet two
+
+1. Ordered list 1
+2. Ordered list 2
+
+* Another way to do a bullet
+
+## Text Formatting
+
+*Italicized text*
+
+**Bold text**
+
+`Code chunk in line`
+
+```{r echo=TRUE}
+print('R code chunk')
+
+```
+
+
+## Show Data and plots 1
+```{r, comment = ""}
+head(mtcars)
+
+```
+
+## Show Plots
+```{r, fig.cap='Relationship of Car Weight to MPG'}
+plot(mpg~wt,data=mtcars,col=cyl,xlab='Weight',ylab='MPG',pch=19)
+mdl<-lm(mpg~wt,data=mtcars)
+abline(mdl,col='blue')
+```
+
+
+## R Markdown
+
+This is an R Markdown presentation. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document.
+
+## Slide with Bullets
+
+- Bullet 1
+- Bullet 2
+- Bullet 3
+
+## Slide with R Output
+
+```{r cars, echo = TRUE}
+summary(cars)
+```
+
+## Slide with Plot
+
+```{r pressure}
+plot(pressure)
+```
+
