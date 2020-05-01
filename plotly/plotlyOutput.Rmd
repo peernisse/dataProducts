@@ -1,0 +1,76 @@
+---
+title: "plotlyDemo"
+output: slidy_presentation
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+library(plotly)
+```
+
+## Plot 1
+
+```{r plot1}
+
+
+df<-mtcars
+plot_ly(mtcars, x = ~wt, y = ~mpg, mode = 'markers', color = ~cyl,
+        size = ~hp)
+
+
+```
+
+
+## Plot 2
+
+```{r 3d}
+#Test 3d graphic
+
+set.seed(42)
+temp<-rnorm(100,mean = 30, sd = 5)
+pressure<-rnorm(100)
+time<-1:100
+
+plot_ly(x = temp,y = pressure, z = time, type = "scatter3d",
+        mode = 'markers', color = temp)
+
+
+
+```
+
+## Plot 3
+
+```{r p3}
+data("airmiles")
+
+plot_ly(x = ~time(airmiles), y = ~airmiles, type='scatter',mode='lines')
+
+```
+
+
+
+
+## Heat Map Example
+
+```{r hm}
+terrain<-matrix(rnorm(100*100),nrow = 100, ncol = 100)
+plot_ly(z = terrain, type = 'heatmap')
+
+
+```
+
+
+
+## Heat Map Surface Example
+
+```{r hm2}
+terrain<-matrix(sort(rnorm(100*100)),nrow = 100, ncol = 100)
+plot_ly(z = terrain, type = 'surface')
+
+
+```
+
+
+
+

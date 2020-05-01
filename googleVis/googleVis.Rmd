@@ -1,0 +1,60 @@
+---
+title: "googleVis"
+output: html_document
+---
+
+## Example
+
+```{r gv, results='asis',cache=TRUE}
+#This script demonstrates googlevis package
+#The R function creates an HTML page
+#The HTML page calls Google Charts
+#The result is an interactive HTML graphic
+
+suppressPackageStartupMessages(library(googleVis))
+
+M<-gvisMotionChart(Fruits,"Fruit","Year",
+                   options=list(width=600,height=400)
+                   )
+print(M,'chart')
+
+plot(M)
+
+
+
+```
+
+
+## Charts in googleVis
+
+<center>"gvis + ChartType"</center>
+
+* Motion Charts: `gvisMotionChart`
+* Interactive Maps: `gvisGeoChart`
+* Interactive Tables: `gvisTable`
+* Line Charts: `gvisLineChart`
+
+
+## Plots on Maps
+
+```{r map,results='asis',cache=TRUE}
+G<-gvisGeoChart(Exports,locationvar = 'Country',
+                colorvar = "Profit",options = list(width = 600, height = 400))
+
+G2<-gvisGeoChart(Exports,locationvar = 'Country',
+                colorvar = "Profit",options = list(width = 600, height = 400,region="150"))
+
+#print(G,'chart')
+
+plot(G)
+plot(G2)
+
+Exports
+
+```
+
+
+
+
+
+
