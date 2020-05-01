@@ -32,3 +32,24 @@ df %>%
 
 ```
 
+## Mapping Code
+```{r, eval=FALSE,echo=TRUE}
+#REad in dataframe with info
+df<-read.csv('altaLocs.csv')
+
+#Map
+df %>% 
+  leaflet() %>% 
+  addProviderTiles('Esri.WorldImagery') %>% 
+  #addTiles() %>% 
+  addCircleMarkers(weight=1,radius = df$diff*3,color = df$col,
+                   
+                  label = df$NAME,labelOptions = labelOptions(noHide = T), popup = df$pop,fillOpacity = 0.75) %>% 
+  addLegend(position='bottomright',labels=c("Easy","Moderate","Expert"),
+                  colors = c("green","blue","black")
+            )
+
+
+
+```
+
