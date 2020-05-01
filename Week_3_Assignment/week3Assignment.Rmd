@@ -1,0 +1,124 @@
+---
+title: "Week 3 Assignment"
+subtitle: "Plotly Examples with ggplot2"
+author: "Peter E"
+date: "May 1, 2020"
+output: ioslides_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+library(plotly)
+library(tidyverse)
+
+```
+
+## Scatterplot Iris
+```{r, message=FALSE}
+
+g<-ggplot(iris,aes(x=Petal.Width,y=Sepal.Width,color=Species))+
+  theme(plot.margin = margin(.5,.25,.25,.25,unit="in"))+
+  geom_point()+
+  geom_smooth(method='lm')+
+  labs(x='Petal Width (cm)', y='Sepal Width (cm)',title='Relationship of Iris Petal and Sepal Width')+
+  theme(legend.position = 'bottom')#THis is ignored by ggplotly
+
+ggplotly(g)
+
+
+
+```
+
+
+## Scatterplot Code
+```{r,echo=TRUE,eval=FALSE}
+g<-ggplot(iris,aes(x=Petal.Width,y=Sepal.Width,color=Species))+
+  theme(plot.margin = margin(.5,.25,.25,.25,unit="in"))+
+  geom_point()+
+  geom_smooth(method='lm')+
+  labs(x='Petal Width (cm)', y='Sepal Width (cm)',
+       title='Relationship of Iris Petal and Sepal Width')+
+  theme(legend.position = 'bottom')#THis is ignored by ggplotly
+
+ggplotly(g)
+
+
+```
+
+
+## Boxplots Iris
+```{r}
+df<-iris %>% gather(PARAMETER,RESULT,1:4)
+
+
+g<-ggplot(df,aes(x=as.character(Species),y=RESULT,color=Species))+
+  theme(plot.margin = margin(.5,.25,.25,.25,unit="in"))+
+  geom_boxplot()+
+  facet_wrap(~PARAMETER,scales='free')+
+  labs(x='Species', y='Parameter Result (cm)',title='Relationship of Iris Petal and Sepal Characteristics between Species')+
+  theme(legend.position = 'bottom',
+        axis.title.y = element_text(vjust = +5)) #THis is ignored by ggplotly
+
+ggplotly(g)
+
+
+
+```
+
+## Boxplot Code
+```{r,echo=TRUE,eval=FALSE}
+#Get data in long format
+df<-iris %>% gather(PARAMETER,RESULT,1:4)
+
+
+g<-ggplot(df,aes(x=Species,y=RESULT,color=Species))+
+  theme(plot.margin = margin(.5,.25,.25,.25,unit="in"))+
+  geom_boxplot()+
+  facet_wrap(~PARAMETER,scales='free')+
+  labs(x='Species', y='Parameter Result (cm)',
+       title='Relationship of Iris Petal and Sepal Characteristics 
+       between Species')+
+  theme(legend.position = 'bottom',
+        axis.title.y = element_text(vjust = +5))#THis is ignored by ggplotly
+
+ggplotly(g)
+```
+
+
+## QQ Plots Iris
+```{r}
+
+df<-iris %>% gather(PARAMETER,RESULT,1:4)
+
+
+g<-ggplot(df,aes(sample=RESULT,color=Species))+
+  theme(plot.margin = margin(.5,.25,.25,.25,unit="in"))+
+  geom_qq()+
+  geom_qq_line()+
+  facet_wrap(~PARAMETER,scales='free')+
+  labs(x='Species', y='Parameter Distribution',title='Relationship of Iris Petal and Sepal Characteristics between Species')+
+  theme(legend.position = 'bottom')#THis is ignored by ggplotly
+
+ggplotly(g)
+
+```
+
+## QQ Plot Code
+```{r,echo=TRUE,eval=FALSE}
+#Get data in long format
+df<-iris %>% gather(PARAMETER,RESULT,1:4)
+
+
+g<-ggplot(df,aes(sample=RESULT,color=Species))+
+  theme(plot.margin = margin(.5,.25,.25,.25,unit="in"))+
+  geom_qq()+
+  geom_qq_line()+
+  facet_wrap(~PARAMETER,scales='free')+
+  labs(x='Species', y='Parameter Distribution',
+       title='Relationship of Iris Petal and Sepal Characteristics 
+       between Species')+
+  theme(legend.position = 'bottom')#THis is ignored by ggplotly
+
+ggplotly(g)
+```
+
