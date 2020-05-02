@@ -1,0 +1,24 @@
+- Class: meta
+  Course: My First Swirl Course
+  Lesson: Lesson 2
+  Author: your name goes here
+  Type: Standard
+  Organization: your organization's name goes here
+  Version: 2.4.3
+
+- Class: mult_question
+  Output: Which shape has three sides?
+  AnswerChoices: Square;Circle;Triangle
+  CorrectAnswer: Triangle
+  AnswerTests: omnitest(correctVal= 'Triangle')
+  Hint: Tri from the latin for three...
+
+- Class: figure
+  Output: Here is an example of a simple figure.
+  Figure: fig1.R
+  FigureType: new
+
+- Class: figure
+  Output: A regression line has been added.
+  Figure: fig2.R
+  FigureType: add
