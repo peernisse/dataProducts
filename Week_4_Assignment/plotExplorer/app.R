@@ -1,10 +1,7 @@
 #
-# This is a Shiny web application. You can run the application by clicking
-# the 'Run App' button above.
-#
-# Find out more about building applications with Shiny here:
-#
-#    http://shiny.rstudio.com/
+# THis app is for Coursers Data Products course week 4
+# peernisse@gmail.com
+# https://github.com/peernisse/dataProducts/blob/master/Week_4_Assignment/plotExplorer
 #
 
 library(shiny)
@@ -31,7 +28,7 @@ ui <- fluidPage(
         
       ),#end sidebar layout
       
-      # Show a plot of the generated distribution
+      # Show some interactive plots
       mainPanel(
         tabsetPanel(type = 'tabs',
             tabPanel("Explorer App Overview",
@@ -40,10 +37,28 @@ ui <- fluidPage(
                      p('This app allows the user to explore the `Iris` dataset 
                        from the base R `data` package. The purpose is to demonstrate 
                        R Shiny interactivity and dynamic plots.'),
+                     p('This app could be redesigned to take user input files such 
+                       as CSV files and render the data in various plots or statistical 
+                       summary tables.'),
                      h4('Instructions'),
-                     p('Navigate the app using the tabs at the top. The select boxes on the left 
-                       allow you to select which iris species to plot, and each plot tyoe has 
-                       additional tools associate with the plot type.')
+                     p('Navigate the app using the tabs at the top. The select species box on the left 
+                       allow you to select which iris species to plot. No plots will show up until
+at least one species is selected. Each plot type also has some additional tools associated with the plot type.'),
+                     p('The Plotting Tools tab contains both a scatter plot and a boxplot (scroll down the page)'),
+                     h4('Source Code'),
+                     p('The source code for this app is available on my Github:'),
+                     p(
+                       tags$a(href="https://github.com/peernisse/dataProducts/blob/master/Week_4_Assignment/plotExplorer/app.R",
+                              "https://github.com/peernisse/dataProducts/blob/master/Week_4_Assignment/plotExplorer/app.R")
+                     ),
+                     h4('References'),
+                     p('Becker, R. A., Chambers, J. M. and Wilks, A. R. (1988) The New S Language. Wadsworth & Brooks/Cole. (has iris3 as iris.)'),
+                     p('Winston Chang, Joe Cheng, JJ Allaire, Yihui Xie and Jonathan
+  McPherson (2019). shiny: Web Application Framework for R. R package
+  version 1.3.2. https://CRAN.R-project.org/package=shiny'),
+                     p('R Core Team (2018). R: A language and environment for statistical
+  computing. R Foundation for Statistical Computing, Vienna, Austria.
+  URL https://www.R-project.org/.')
                      
                   ),#End overview tab
             
