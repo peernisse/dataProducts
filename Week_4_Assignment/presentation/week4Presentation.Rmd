@@ -31,6 +31,9 @@ The well-known and widely used iris data set (Fisher's or Anderson's) gives the 
 The app can be accessed here:
 https://peernisse.shinyapps.io/plotExplorer/
 
+### Presentation Source Code
+The code for this presentation can be found here:https://github.com/peernisse/dataProducts/blob/gh-pages/Week_4_Assignment/presentation/week4Presentation.Rmd
+
 ## Iris Species
 
 Below are images of each ofthe three iris species for a little bit of reference while using the app. Each species has different lengths and widths of sepals and petals. The ratio of sepal and petal length is somewhat unique to each species.
