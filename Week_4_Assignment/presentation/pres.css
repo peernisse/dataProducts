@@ -1,0 +1,29 @@
+
+h2{
+  color: #FF9B26;
+}
+
+h1{
+  color: #8B8376;
+}
+
+h3{
+  color: #000000;
+}
+
+p{
+  color:#000000;
+}
+
+.column {
+  float: left;
+  width: 33.33%;
+}
+
+.column2 {
+  float: left;
+  width: 50%;
+}
+
+
+
