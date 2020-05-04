@@ -1,0 +1,12 @@
+name: plotExplorer
+title: plotExplorer
+username:
+account: peernisse
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 2233450
+bundleId: 3097369
+url: https://peernisse.shinyapps.io/plotExplorer/
+when: 1588522525.79915
+asMultiple: FALSE
+asStatic: FALSE
